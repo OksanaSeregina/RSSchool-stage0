@@ -56,3 +56,23 @@ window.addEventListener("click", (e) => {
     menuIcon.classList.add("hide");
   }
 });
+
+//Changing images in the Portfolio section
+const groupBtn = document.querySelector(".group-btn");
+const itemsPortfolio = document.querySelectorAll(".item-portfolio");
+const btnPortfolioTransp = document.querySelectorAll(".btn-portfolio-transp");
+
+function changeImage(event) {
+  if (event.target.classList.contains("btn-portfolio-transp")) {
+    let season = event.target.dataset.season;
+
+    itemsPortfolio.forEach(
+      (img, index) =>
+        (img.innerHTML = `<img src="./assets/img/${season}/${
+          index + 1
+        }.jpg" alt="foto" /> `)
+    );
+  }
+}
+
+groupBtn.addEventListener("click", changeImage);
