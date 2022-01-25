@@ -31,11 +31,6 @@ body {
   --font3: 20px;
 }
 
-.active {
-  color: #000;
-  background-color: #bdae82;
-}
-
 .header {
   background: url("../assets/img/bg.jpg");
   background-repeat: no-repeat;
@@ -337,24 +332,12 @@ body {
   transition: 1s;
 }
 
-.main .portfolio .group-btn .btn-portfolio-gold {
-  border: 0;
-  background-color: var(--color-gold);
-  cursor: pointer;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: var(--font3);
-  line-height: 40px;
-  text-align: center;
-  width: 220px;
-  height: 55px;
-  -webkit-transition: 1s;
-  transition: 1s;
+.main .portfolio .group-btn .active {
+  color: #000;
+  background-color: #bdae82;
 }
 
-.main .portfolio .group-btn .btn-portfolio-transp:hover,
-.main .portfolio .group-btn .btn-portfolio-gold:hover {
+.main .portfolio .group-btn .btn-portfolio-transp:hover {
   color: #ffffff;
 }
 
