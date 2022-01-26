@@ -104,7 +104,7 @@ body {
   text-decoration: none;
 }
 
-.header .info-header .language .en {
+.header .info-header .language .active-lang {
   color: var(--color-gold);
 }
 
