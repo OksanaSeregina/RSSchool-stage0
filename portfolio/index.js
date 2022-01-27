@@ -205,6 +205,7 @@ function getTranslate(lang) {
 document.querySelector(".language").addEventListener("click", (e) => {
   let lang = e.target.dataset.lang;
   getTranslate(lang);
+  localStorage.setItem("langStorage", lang);
   changeClassActive(e, "active-lang", langElements);
 });
 
@@ -221,34 +222,32 @@ const classesSwitching = [
   document.querySelector(".footer"),
 ];
 
+let themeStorage = "dark";
+
 function changeSwitcher() {
   classesSwitching.forEach((elem) => {
     elem.classList.toggle(`${elem.className.split(" ", 1)[0]}-light-theme`);
   });
 }
 document.querySelector(".switcher").addEventListener("click", changeSwitcher);
-/* /*--------------------- local storage --------------------- 
+/*--------------------- local storage --------------------- */
 
-let langStorage = 'en';
-let themeStorage = 'dark';
-
+/* let langStorage = "en";
+let themeStorage = "dark";
 
 function setLocalStorage() {
-  localStorage.setItem('langStorage', langStorage);
-  localStorage.setItem('themeStorage', themeStorage);
+  localStorage.setItem("langStorage", langStorage);
+  //localStorage.setItem("themeStorage", themeStorage);
 }
-window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener("beforeunload", setLocalStorage); */
 
 function getLocalStorage() {
-  if(localStorage.getItem('langStorage')) {
-    const langStorage = localStorage.getItem('langStorage')
+  if (localStorage.getItem("langStorage")) {
+    const langStorage = localStorage.getItem("langStorage");
     getTranslate(langStorage);
-  }
-  else if(localStorage.getItem('themeStorage')) {
-    const themeStorage = localStorage.getItem('themeStorage')
-    switchTheme(themeStorage);
-  }
+  } /* else if (localStorage.getItem("themeStorage")) {
+    const themeStorage = localStorage.getItem("themeStorage");
+    changeSwitcher(themeStorage);
+  } */
 }
-window.addEventListener('load', getLocalStorage);
-
-}); */
+window.addEventListener("load", getLocalStorage);

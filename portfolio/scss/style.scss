@@ -207,6 +207,8 @@ body {
 }
 .header-light-theme {
   background: url(../assets/img/bg-lt.jpg);
+  background-repeat: no-repeat;
+  background-position: center 0;
   .info-header {
     .logo {
       background-image: url(../assets/svg/logo-lt.svg);
@@ -1013,6 +1015,7 @@ body {
   }
   .main .hero-light-theme {
     background-image: url(../assets/img/bg2-lt.jpg);
+    background-position: 0 -90px;
   }
   .main .hero .content-hero {
     width: fit-content;
