@@ -172,7 +172,6 @@ function changeImage(event) {
     changeClassActive(event, "active", btnPortfolioTransp);
   }
 }
-
 groupBtn.addEventListener("click", changeImage);
 
 //Image Caching
@@ -186,7 +185,6 @@ function preloadImages() {
     }
   });
 }
-
 preloadImages();
 
 //Page translation
@@ -210,6 +208,25 @@ document.querySelector(".language").addEventListener("click", (e) => {
   changeClassActive(e, "active-lang", langElements);
 });
 
+//Switching themes
+const classesSwitching = [
+  document.querySelector(".wrapper"),
+  document.querySelector(".header"),
+  document.querySelector(".hero"),
+  document.querySelector(".skills"),
+  document.querySelector(".portfolio"),
+  document.querySelector(".video"),
+  document.querySelector(".price"),
+  document.querySelector(".contacts"),
+  document.querySelector(".footer"),
+];
+
+function changeSwitcher() {
+  classesSwitching.forEach((elem) => {
+    elem.classList.toggle(`${elem.className.split(" ", 1)[0]}-light-theme`);
+  });
+}
+document.querySelector(".switcher").addEventListener("click", changeSwitcher);
 /* /*--------------------- local storage --------------------- 
 
 let langStorage = 'en';
