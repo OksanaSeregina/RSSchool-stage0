@@ -1689,6 +1689,10 @@ body {
   .main .portfolio .container-imgs .item-portfolio {
     height: auto;
   }
+  .main .portfolio .title span {
+    font-size: 24px;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -1711,6 +1715,9 @@ body {
 @media screen and (max-width: 375px) {
   .hamburger-menu {
     width: 30px;
+  }
+  .main .skills-light-theme .title span {
+    font-size: 26px;
   }
 }
 
