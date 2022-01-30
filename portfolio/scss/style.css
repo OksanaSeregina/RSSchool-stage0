@@ -223,8 +223,13 @@ body {
   transition: 1s;
 }
 
-.main .hero .content-hero .btn-hero:hover {
+.main .hero .content-hero .btn-hero:hover,
+.main .hero .content-hero .btn-hero:focus {
   color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1em rgba(189, 174, 130, 0.3);
+          box-shadow: 0 0 0 1em rgba(189, 174, 130, 0.3);
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
 }
 
 .main .hero-light-theme {
@@ -259,9 +264,14 @@ body {
   transition: 1s;
 }
 
+.main .hero-light-theme .content-hero .btn-hero:hover,
 .main .hero-light-theme .content-hero .btn-hero:hover {
   background-color: #1c1c1c;
   color: var(--color-gold);
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.5);
+  -webkit-transform: translatey(-0.65em);
+          transform: translatey(-0.65em);
 }
 
 .main .skills .title {
@@ -481,8 +491,11 @@ body {
   background-color: #bdae82;
 }
 
-.main .portfolio .group-btn .btn-portfolio-transp:hover {
+.main .portfolio .group-btn .btn-portfolio-transp:hover,
+.main .portfolio .group-btn .btn-portfolio-transp:focus {
   color: #ffffff;
+  -webkit-box-shadow: inset 0 0 0 2em rgba(189, 174, 130, 0.3);
+          box-shadow: inset 0 0 0 2em rgba(189, 174, 130, 0.3);
 }
 
 .main .portfolio .container-imgs {
@@ -553,6 +566,13 @@ body {
   color: #1c1c1c;
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+.main .portfolio-light-theme .group-btn .btn-portfolio-transp:hover,
+.main .portfolio-light-theme .group-btn .btn-portfolio-transp:focus {
+  color: #ffffff;
+  -webkit-box-shadow: inset 0 0 0 2em rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 0 2em rgba(0, 0, 0, 0.2);
 }
 
 .main .portfolio-light-theme .group-btn .active {
@@ -780,8 +800,13 @@ body {
   width: 60.44%;
 }
 
-.main .price .cards-price .item-price .btn-price:hover {
+.main .price .cards-price .item-price .btn-price:hover,
+.main .price .cards-price .item-price .btn-price:focus {
   color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1em rgba(189, 174, 130, 0.3);
+          box-shadow: 0 0 0 1em rgba(189, 174, 130, 0.3);
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
 }
 
 .main .price-light-theme .title {
@@ -834,9 +859,14 @@ body {
   color: #1c1c1c;
 }
 
-.main .price-light-theme .cards-price .item-price .btn-price:hover {
+.main .price-light-theme .cards-price .item-price .btn-price:hover,
+.main .price-light-theme .cards-price .item-price .btn-price:focus {
   background-color: #1c1c1c;
   color: var(--color-gold);
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.5);
+  -webkit-transform: translatey(-0.65em);
+          transform: translatey(-0.65em);
 }
 
 .main .contacts {
@@ -965,8 +995,13 @@ body {
   transition: 1s;
 }
 
-.main .contacts .content-contacts .btn-contacts:hover {
+.main .contacts .content-contacts .btn-contacts:hover,
+.main .contacts .content-contacts .btn-contacts:focus {
   color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1em rgba(189, 174, 130, 0.3);
+          box-shadow: 0 0 0 1em rgba(189, 174, 130, 0.3);
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
 }
 
 .main .contacts-light-theme {
@@ -1029,9 +1064,14 @@ body {
   transition: 1s;
 }
 
+.main .contacts-light-theme .content-contacts .btn-contacts:hover,
 .main .contacts-light-theme .content-contacts .btn-contacts:hover {
   background-color: #1c1c1c;
   color: var(--color-gold);
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.5);
+  -webkit-transform: translatey(-0.65em);
+          transform: translatey(-0.65em);
 }
 
 .footer {
