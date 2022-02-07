@@ -1,6 +1,10 @@
 const APP_ID = "2V463P6fKEkq0yXfXuR5xVq3dde16ogwTz_Pj6KH3Ek";
 const IMAGES_DATA = "https://api.unsplash.com/search/photos";
 
+const iconSearch = document.querySelector(".icon-search");
+const iconClose = document.querySelector(".icon-close");
+const inputData = document.querySelector("#input");
+
 //получение данных
 const getResourse = async (url) => {
   const res = await fetch(url);
@@ -23,7 +27,7 @@ const getDataInfo = async (search) => {
 //изменение HTML
 const renderImagesApp = async (e) => {
   e.preventDefalt;
-  let currentData = document.querySelector("#input").value;
+  let currentData = inputData.value;
   if (currentData === "" && localStorage.getItem("inputData") === null) {
     currentData = "maldives";
   } else if (currentData === "") {
@@ -51,22 +55,29 @@ const renderImagesApp = async (e) => {
 };
 
 function changeElem(e) {
-  if (
-    e.target.classList.contains("icon-search") &&
-    document.querySelector("#input").value !== ""
-  ) {
-    document.querySelector(".icon-search").classList.add("hiden");
-    document.querySelector(".icon-close").classList.remove("hiden");
+  if (e.code === "Enter" && inputData.value !== "") {
+    iconSearch.classList.add("hiden");
+    iconClose.classList.remove("hiden");
+  }
+  if (e.target.classList.contains("icon-search") && inputData.value !== "") {
+    iconSearch.classList.add("hiden");
+    iconClose.classList.remove("hiden");
   } else {
-    document.querySelector("#input").value = "";
-    document.querySelector("#input").focus();
-    document.querySelector(".icon-search").classList.remove("hiden");
-    document.querySelector(".icon-close").classList.add("hiden");
+    inputData.value = "";
+    inputData.focus();
+    iconSearch.classList.remove("hiden");
+    iconClose.classList.add("hiden");
   }
 }
 
 document.addEventListener("DOMContentLoaded", renderImagesApp);
-document
-  .querySelector(".icon-search")
-  .addEventListener("click", renderImagesApp);
+iconSearch.addEventListener("click", renderImagesApp);
 document.querySelector(".right-heder").addEventListener("click", changeElem);
+
+document.addEventListener("keydown", function (e) {
+  if (e.code === "Enter" && inputData.value !== "") {
+    renderImagesApp(e);
+    iconSearch.classList.add("hiden");
+    iconClose.classList.remove("hiden");
+  }
+});
