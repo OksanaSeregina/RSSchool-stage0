@@ -59,15 +59,20 @@ header {
   outline: none;
   box-shadow: 0px 5px 10px 2px #585b56;
 }
-.icon-search {
+.icon-search,
+.icon-close {
   position: absolute;
   right: 5%;
   top: 20%;
   color: #585b56;
   cursor: pointer;
 }
-.icon-search:hover {
+.icon-search:hover,
+.icon-close:hover {
   color: #b49987;
+}
+.hiden {
+  display: none;
 }
 .content {
   background-color: #1b2326;
@@ -90,6 +95,7 @@ img {
   height: 300px;
   margin-top: 30px;
   transform: scale(1);
+  cursor: pointer;
   box-shadow: 0 0 5px 5px #dfc3c4;
   transition: box-shadow 0.5s, transform 0.5s;
 }

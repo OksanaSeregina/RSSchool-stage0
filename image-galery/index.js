@@ -6,7 +6,7 @@ const getResourse = async (url) => {
   const res = await fetch(url);
 
   if (!res.ok) {
-    throw new Error(`!!!! ${res.status}`);
+    throw new Error(`${res.status} - Too many request`);
   }
 
   return res.json();
@@ -21,7 +21,8 @@ const getDataInfo = async (search) => {
 };
 
 //изменение HTML
-const renderImagesApp = async () => {
+const renderImagesApp = async (e) => {
+  e.preventDefalt;
   let currentData = document.querySelector("#input").value;
   if (currentData === "" && localStorage.getItem("inputData") === null) {
     currentData = "maldives";
@@ -29,7 +30,12 @@ const renderImagesApp = async () => {
     currentData = localStorage.getItem("inputData");
   }
   const data = await getDataInfo(currentData);
+  if (data.results.length === 0) {
+    currentData = "maldives";
+  }
   let imgContent = document.querySelector(".img-content");
+
+  console.log(data.results.length);
 
   imgContent.innerHTML = "";
 
@@ -44,7 +50,23 @@ const renderImagesApp = async () => {
   localStorage.setItem("inputData", currentData);
 };
 
+function changeElem(e) {
+  if (
+    e.target.classList.contains("icon-search") &&
+    document.querySelector("#input").value !== ""
+  ) {
+    document.querySelector(".icon-search").classList.add("hiden");
+    document.querySelector(".icon-close").classList.remove("hiden");
+  } else {
+    document.querySelector("#input").value = "";
+    document.querySelector("#input").focus();
+    document.querySelector(".icon-search").classList.remove("hiden");
+    document.querySelector(".icon-close").classList.add("hiden");
+  }
+}
+
 document.addEventListener("DOMContentLoaded", renderImagesApp);
 document
   .querySelector(".icon-search")
   .addEventListener("click", renderImagesApp);
+document.querySelector(".right-heder").addEventListener("click", changeElem);
