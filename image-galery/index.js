@@ -34,21 +34,27 @@ const renderImagesApp = async (e) => {
     currentData = localStorage.getItem("inputData");
   }
   const data = await getDataInfo(currentData);
-  if (data.results.length === 0) {
-    currentData = "maldives";
-  }
-  let imgContent = document.querySelector(".img-content");
 
-  console.log(data.results.length);
+  const imgContent = document.querySelector(".img-content");
 
   imgContent.innerHTML = "";
 
-  for (let i = 0; i < data.results.length; i++) {
-    imgContent.innerHTML += `
+  if (data.results.length === 0) {
+    imgContent.innerHTML = `
+    <div class="message-info">
+      К сожалению, мы ничего не нашли по вашему запросу.
+      Попробуйте поискать что-нибудь другое...
+    </div>
+    `;
+    currentData = "maldives";
+  } else {
+    for (let i = 0; i < data.results.length; i++) {
+      imgContent.innerHTML += `
     <div class="item">
       <img src=${data.results[i].urls.regular} alt="foto" />
     </div>
     `;
+    }
   }
 
   localStorage.setItem("inputData", currentData);
@@ -81,3 +87,13 @@ document.addEventListener("keydown", function (e) {
     iconClose.classList.remove("hiden");
   }
 });
+
+console.log(`
+1.Вёрстка +10
+2.При загрузке приложения на странице отображаются полученные от API изображения +10
+3.Если в поле поиска ввести слово и отправить поисковый запрос, на странице отобразятся изображения соответствующей тематики, если такие данные предоставляет API +10
+4.Поиск +30
+5.Дополнительный функционал (ЕСЛИ ПОСЛЕ ОТПРАВКИ ПОИСКОВОГО ЗАПРОСА, API НИЧЕГО НЕ ВЕРНЁТ (к примеру, если в поиск ввести fffff), НА ЭКРАН ВЫВЕДЕТСЯ СООБЩЕНИЕ, ЧТО НИЧЕГО НЕ НАЙДЕНО)
+
+Score:60.
+`);

@@ -85,6 +85,12 @@ header {
   justify-content: space-around;
   padding-bottom: 30px;
 }
+.message-info {
+  color: #f5f0ce;
+  width: 62%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 img {
   max-width: 100%;
   width: 100%;
@@ -105,10 +111,6 @@ img {
   transform: scale(1.05);
   box-shadow: 0 0 15px 7px #dfc3c4;
   transition: box-shadow 0.5s, transform 0.5s;
-}
-
-.modal {
-  display: none;
 }
 
 footer {
@@ -146,6 +148,9 @@ footer {
   .center {
     width: 90%;
   }
+  .message-info {
+    text-align: justify;
+  }
 }
 @media screen and (max-width: 1024px) {
   .title {
@@ -161,6 +166,9 @@ footer {
 @media screen and (max-width: 768px) {
   .item {
     width: 75%;
+  }
+  .message-info {
+    width: 90%;
   }
 }
 @media screen and (max-width: 600px) {
@@ -192,6 +200,12 @@ footer {
   .link-github {
     width: 100%;
     justify-content: center;
+  }
+}
+@media screen and (max-width: 425px) {
+  .message-info {
+    font-size: 1.5rem;
+    line-height: 36px;
   }
 }
 @media screen and (max-width: 375px) {
